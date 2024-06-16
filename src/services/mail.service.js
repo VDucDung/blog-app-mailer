@@ -21,10 +21,12 @@ const sendEmail = async (options) => {
   }
   await transport.sendMail(message)
 }
+
 const sendEmailWithTemplate = async (data, type) => {
+  console.log('Đã nhận queue')
   const html = await ejs.renderFile(
     path.join(__dirname, '..', 'templates', `${type}.ejs`),
-    data
+    { data }
   )
   const options = { ...data, html }
   await sendEmail(options)

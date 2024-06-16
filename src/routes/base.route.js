@@ -3,6 +3,7 @@ const httpStatus = require('http-status')
 
 const authApiKey = require('../middlewares')
 const { mailService } = require('../services')
+
 const baseRoute = express.Router()
 
 baseRoute.get('/', (req, res) => {
