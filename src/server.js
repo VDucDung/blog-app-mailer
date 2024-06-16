@@ -1,9 +1,9 @@
 const express = require('express')
 
 const { env } = require('./config')
+const { baseRoute } = require('./routes')
 const { QUEUE_TYPES } = require('./constans')
 const { mailService, rabbitmqService } = require('./services')
-const baseRoute = require('./routes/base.route')
 
 const app = express()
 

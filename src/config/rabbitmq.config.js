@@ -4,19 +4,19 @@ const rabbitMQConfig = {
   port: process.env.RABBITMQ_PORT || 5672,
   username: process.env.RABBITMQ_USERNAME,
   password: process.env.RABBITMQ_PASSWORD,
-  type: process.env.RABBITMQ_TYPE || 'cloud',
-};
+  type: process.env.RABBITMQ_TYPE || 'cloud'
+}
 
-const { type, host, port, username, password, vhost } = rabbitMQConfig;
+const { type, host, port, username, password, vhost } = rabbitMQConfig
 
-let uri;
+let uri
 
 if (type === 'cloud') {
-  uri = `amqps://${username}:${password}@${host}/${vhost}`;
+  uri = `amqps://${username}:${password}@${host}/${vhost}`
 } else {
-  uri = `amqp://${username}:${password}@${host}:${port}/${vhost}`;
+  uri = `amqp://${username}:${password}@${host}:${port}/${vhost}`
 }
 
 module.exports = {
-  uri,
-};
+  uri
+}
